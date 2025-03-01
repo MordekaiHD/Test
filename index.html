@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Подключение шрифтов -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Yeseva+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Опросник</title>
+</head>
+
+<body>
+  <!-- Шапка -->
+  <div class="header">
+    <div class="header__dropdown">
+      <button class="header__dropdown-button">
+        <img class="header__dropdown-img" src="img/menu.svg" alt="Меню">
+      </button>
+      <div class="header__dropdown-content">
+        <button class="header__dropdown-content-button">
+          <img src="img/icon.svg" alt="Закрыть">
+        </button>
+        <div class="header__dropdown-content-box">
+          <a class="header__dropdown-content-link" href="#">ИНФОРМАЦИЯ О ТЕСТЕ</a>
+          <a class="header__dropdown-content-link" href="#">ГЛАВНАЯ</a>
+          <a class="header__dropdown-content-link" href="#">ПРОЙТИ ТЕСТ</a>
+        </div>
+      </div>
+    </div>
+    <div class="header__dropdown-info">
+      <img src="img/rain_bk3.svg" alt="" class="header__dropdown-info-img">
+      <p class="header__dropdown-info-text">ТЕСТ НА ОПРЕДЕЛЕНИЙ IQ</p>
+    </div>
+  </div>
+
+  <!-- Основной контент -->
+  <div class="main">
+    <!-- Верхний блок -->
+    <div class="main__top">
+      <h1 class="main__top-title">Пройдите точный и быстрый</h1>
+      <p class="main__top-text">ТЕСТ НА ОПРЕДЕЛЕНИЙ IQ</p>
+      <img src="img/rain_bk3.svg" alt="" class="main__top-img">
+      <button class="startQuizButton main__top-button">ПРОЙТИ ТЕСТ</button>
+      <p class="main__top-text-botton">И получите рекомендации по развитию своего интеллекта</p>
+      <p class="main__top-text-botton-span">и улучшению финансового благосостояния и личной жизни</p>
+    </div>
+
+    <!-- Центральный блок -->
+    <div class="main__center">
+      <div class="main__center-info">
+        <img src="img/“.svg" alt="" class="main__center-img-top">
+        <p class="main__center-text">Профессиональный IQ-тест позволяет не только определить коэффициент вашего
+          интеллекта, но и выработать список рекомендаций для повышения этого показателя.</p>
+        <img src="img/“ (1).svg" alt="" class="main__center-img-bottom">
+      </div>
+    </div>
+
+    <!-- Следующий блок -->
+    <div class="main__center-next">
+      <p class="main__center-next-text">
+        Также по результатам теста <span class="main__center-next-text-span">ВЫ ПОЛУЧИТЕ</span> подробные <span
+          class="main__center-next-text-span">СОВЕТЫ</span> по определению наиболее перспективной <span
+          class="main__center-next-text-span">ДЛЯ ВАШЕГО ТИПА интеллекта СФЕРЫ ДЕЯТЕЛЬНОСТИ</span>, которая принесет вам
+        скорейший финансовый результат.
+      </p>
+      <img src="img/325-01.svg" alt="" class="main__center-next-img">
+      <button class="startQuizButton main__top-button">ПРОЙТИ ТЕСТ</button>
+    </div>
+
+    <!-- Нижний блок -->
+    <div class="main__bottom">
+      <img src="img/lightningRight.svg" alt="" class="main__bottom-img-right">
+      <img src="img/lightningLeft.svg" alt="" class="main__bottom-img-left">
+      <p class="main__bottom-text">
+        Прохождение теста займет у вас не более <span class="main__bottom-text-span">12 минут</span>, а его результаты
+        вы сможете <span class="main__bottom-text-span">использовать всю жизнь.</span>
+      </p>
+      <p class="main__bottom-text-next">
+        Профессиональная интерпретация и детально <span class="main__bottom-text-span-next">проработанные
+          рекомендации</span> позволят вам качественно <span class="main__bottom-text-span-next">изменить все аспекты
+          своей жизни:</span> от финансового до любовного.
+      </p>
+      <button class="startQuizButton main__bottom-button">ПРОЙТИ ТЕСТ</button>
+    </div>
+
+    <!-- Контейнер для теста -->
+    <div class="quizContainer hidden">
+      <div class="box">
+        <!-- Прогресс-бар -->
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+
+        <!-- Блок с вопросом -->
+        <div class="info__question">
+          <h2 class="question"></h2>
+          <div class="img">
+            <img src="" alt="" class="options__img" style="display:none;">
+          </div>
+          <!-- Контейнер для квадратов с цифрами -->
+          <div class="square-options"></div>
+          <!-- Варианты ответов -->
+          <div class="options"></div>
+        </div>
+
+        <!-- Кнопка "Следующий вопрос" -->
+        <button class="nextButton hidden">ДАЛЕЕ</button>
+
+        <!-- Блок обработки результатов -->
+        <div class="results__processing" style="display: none;">
+          <p class="results__processing-text">Обработка результатов</p>
+          <div class="loader">
+            <div class="loader__spinner"><img src="img/Group1.svg" alt=""></div>
+          </div>
+          <p class="results__processing-text-bottom">Определение стиля мышления...........
+            ......................................</p>
+        </div>
+
+        <!-- Блок завершения теста -->
+        <div class="quiz__end" style="display: none;">
+          <h1 class="quiz__end-title-top">ВАШ РЕЗУЛЬТАТ РАССЧИТАН:</h1>
+          <p class="quiz__end-text">Вы относитесь к 3% респондентов, чей уровень интеллекта более чем на 15 пунктов
+            отличается от среднего в большую или меньшую сторону!</p>
+          <h2 class="quiz__end-title">СКОРЕЕ ПОЛУЧИТЕ СВОЙ РЕЗУЛЬТАТ!</h2>
+          <p class="quiz__end-info">В ЦЕЛЯХ ЗАЩИТЫ ПЕРСОНАЛЬНЫХ ДАННЫХ РЕЗУЛЬТАТ ТЕСТА, ИХ ПОДРОБНАЯ ИНТЕРПРЕТАЦИЯ И
+            РЕКОМЕНДАЦИИ ДОСТУПНЫ В ВИДЕ ГОЛОСОВОГО СООБЩЕНИЯ ПО ЗВОНКУ С ВАШЕГО МОБИЛЬНОГО ТЕЛЕФОНА.</p>
+          <div class="quiz__end-timer">
+            <div class="timer">Звоните скорее, запись доступна всего <span class="time" id="time">10:00</span> минут
+            </div>
+          </div>
+          <button class="quiz__end-button">
+            <img src="img/Group.svg" alt="" class="quiz__end-button-img">Позвонить и прослушать результат
+          </button>
+          <p class="quiz__end-info-botton">TERMENI SI CONDITII: ACESTA ESTE UN SERVICIU DE DIVERTISMENT. PRIN FOLOSIREA
+            LUI DECLARATI CA AVETI 18 ANI IMPLINITI</p>
+        </div>
+
+        <!-- Контейнер для данных из API -->
+        <div class="api__response" style="display: none;"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
