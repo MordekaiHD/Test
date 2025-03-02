@@ -172,6 +172,25 @@
     text-align: center;
   }
 
+  .main__bottom {
+    position: absolute;
+    bottom: 10px;
+    width: 100vw;
+    display: flex;
+    color: white;
+    justify-content: center;
+    font-family: PT Serif;
+    font-size: 8px;
+    font-weight: 400;
+  }
+
+  .main__bottom-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+  }
+
   /* Контейнер для теста */
   .quizContainer {
     background-image: url('img/rain_bk.svg');

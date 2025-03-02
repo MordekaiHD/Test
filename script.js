@@ -198,7 +198,7 @@ startQuizButtons.forEach(button => {
     startQuizButtons.forEach(btn => btn.style.display = "none");
     showQuestion();
     body.classList.add("no-scroll");
-    progress.style.width = "10%";
+    progress.style.width = "5%";
   });
 });
 
