@@ -1,4 +1,3 @@
-// Массив с вопросами и ответами
 const questions = [
   { question: "Ваш пол", options: ["Мужчина", "Женщина"] },
   { question: "Укажите ваш возраст:", options: ["До 18", "От 18 до 28", "От 29 до 35", "От 36"] },
@@ -44,7 +43,6 @@ const questions = [
 
 let currentQuestionIndex = 0;
 
-// Элементы DOM
 const startQuizButtons = document.querySelectorAll(".startQuizButton");
 const quizContainer = document.querySelector(".quizContainer");
 const questionElement = document.querySelector(".question");
@@ -64,8 +62,6 @@ const body = document.body;
 const progress = document.querySelector(".progress");
 const progressBar = document.querySelector(".progress-bar");
 
-
-// Открываем/закрываем выпадающее меню
 headerDropdown.addEventListener('click', () => {
   headerDropdownContent.style.display = headerDropdownContent.style.display === "block" ? "none" : "block";
 });
