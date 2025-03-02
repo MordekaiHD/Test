@@ -53,11 +53,17 @@ const nextButton = document.querySelector(".nextButton");
 const headerDropdown = document.querySelector('.header__dropdown-button');
 const headerDropdownContent = document.querySelector('.header__dropdown-content');
 const headerDropdownContentButton = document.querySelector('.header__dropdown-content-button');
+const headerDropdownInfo = document.querySelector('.header__dropdown-info');
+const headerDropdownInfoImg = document.querySelector('.header__dropdown-info-img');
+const headerDropdownInfoText = document.querySelector('.header__dropdown-info-text');
+const headerDropdownInfoComplite = document.querySelector('.header__dropdown-info-complite');
 const optionsImg = document.querySelector('.options__img');
 const infoQuestion = document.querySelector('.info__question');
 const resultsProcessing = document.querySelector('.results__processing');
 const body = document.body;
-const progressBar = document.querySelector(".progress");
+const progress = document.querySelector(".progress");
+const progressBar = document.querySelector(".progress-bar");
+
 
 // Открываем/закрываем выпадающее меню
 headerDropdown.addEventListener('click', () => {
@@ -69,8 +75,8 @@ headerDropdownContentButton.addEventListener('click', () => {
 });
 
 const updateProgressBar = () => {
-  const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
-  progressBar.style.width = `${progress}%`;
+  const loading = ((currentQuestionIndex + 1) / questions.length) * 100;
+  progress.style.width = `${loading}%`;
 };
 
 const showQuestion = () => {
@@ -180,28 +186,32 @@ const endQuiz = () => {
     }, 1000);
 
     resultsProcessing.style.display = "none";
-    document.querySelector(".quiz__end").style.display = "block";
+    headerDropdownInfoText.style.display = "none";
+    headerDropdownInfoComplite.style.display = "flex";
+    document.querySelector(".quiz__end").style.display = "flex";
+    progressBar.style.display = "none";
   }, 1000);
 
-  updateProgressBar();
 };
 
 startQuizButtons.forEach(button => {
   button.addEventListener("click", () => {
+    headerDropdownInfo.style.display = "flex";
     quizContainer.classList.remove("hidden");
     quizContainer.classList.add("visible");
     startQuizButtons.forEach(btn => btn.style.display = "none");
     showQuestion();
     body.classList.add("no-scroll");
-    progressBar.style.width = "0%";
+    progress.style.width = "10%";
   });
 });
 
 nextButton.addEventListener("click", nextQuestion);
 
 document.querySelector('.quiz__end-button').addEventListener('click', () => {
-  const quizEndElements = document.querySelectorAll('.quiz__end-title-top, .quiz__end-text, .quiz__end-title, .quiz__end-info, .quiz__end-timer, .quiz__end-button, .quiz__end-info-botton, .progress-bar');
+  const quizEndElements = document.querySelectorAll('.quiz__end-title-top, .quiz__end-text, .quiz__end-title, .quiz__end-info, .quiz__end-timer, .quiz__end-button, .quiz__end-info-botton');
   quizEndElements.forEach(el => el.style.display = 'none');
+  
 
   fetch('https://swapi.dev/api/people/1/')
     .then(response => response.json())
